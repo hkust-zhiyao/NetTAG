@@ -1,0 +1,1 @@
+python3 run_contrastive.py ../train_configs/simcse/Sheared-Llama.json 

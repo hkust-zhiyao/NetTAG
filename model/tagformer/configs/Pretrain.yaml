@@ -1,0 +1,33 @@
+train_file: ['data/coco.json',
+               'data/vg.json',
+               'data/cc12m.json',
+               'data/cc3m_train.json',
+               'data/cc3m_val.json',
+               'data/sbu.json'               
+               ]
+# each train_file (json) contains a python list where each item is {'image': img_path, 'caption': text or list_of_text }               
+bert_model_name: 'bert-base-uncased'
+bert_config: 'configs/config_bert.json'
+gt_config: 'configs/config_gt.json'
+gnn_config: 'configs/config_gnn.json'
+
+image_res: 256
+text_width: 4096
+embed_dim: 768
+batch_size: 2
+temp: 0.07
+mlm_probability: 0.15
+queue_size: 65536
+momentum: 0.995
+alpha: 0.4
+
+optimizer: {lr: 1e-4, eps: 1e-8, weight_decay: 0}
+# schedular: {sched: cosine, lr: 1e-4, epochs: 30, min_lr: 1e-5, decay_rate: 1, warmup_lr: 1e-5, warmup_epochs: 20, cooldown_epochs: 0}
+schedular: {epochs: 150, lr_end: 1e-5, power: 1, warmup_lr: 1e-5, warmup_updates: 20, total_updates: 256}
+
+
+
+
+
+
+

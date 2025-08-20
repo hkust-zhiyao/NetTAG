@@ -1,0 +1,69 @@
+json_dict:
+    ln -s ../../../rtl_encoder/dataset/data_bench/data_dict_train_ori.json train_dict.json
+    ln -s ../../../rtl_encoder/dataset/data_bench/data_dict_test_ori.json test_dict.json
+
+1. RTL CL
+    anchor: rtl_train_ori
+    pos: rtl_train_pos
+        ln -s ../../../rtl_encoder/dataset/data_bench/dataset_train_pos.pkl ./rtl_train_pos.pkl
+    neg: rtl_train_neg
+
+    ln -s ../../../rtl_encoder/dataset/data_bench/dataset_test_ori.pkl ./rtl_test_ori.pkl
+    ln -s ../../../rtl_encoder/dataset/data_bench/dataset_test_pos.pkl ./rtl_test_pos.pkl
+    ln -s ../../../rtl_encoder/dataset/data_bench/dataset_test_neg.pkl ./rtl_test_neg.pkl
+
+2. Netlist CL
+    anchor: net_train_ori
+    pos: net_train_pos
+        ln -s ../../../net_encoder/dataset/data_bench/dataset_train_pos1.pkl ./net_train_pos.pkl
+    neg: net_train_neg
+
+    ln -s ../../../net_encoder/dataset/data_bench/dataset_test_ori.pkl ./net_test_ori.pkl
+    ln -s ../../../net_encoder/dataset/data_bench/dataset_test_pos1.pkl ./net_test_pos.pkl
+    ln -s ../../../net_encoder/dataset/data_bench/dataset_test_neg1.pkl ./net_test_neg.pkl
+
+3. RTL-to-Netlist CL
+    anchor: RTL (ori) rtl_train_ori
+        ln -s ../../../rtl_encoder/dataset/data_bench/dataset_train_ori.pkl ./rtl_train_ori.pkl
+    pos: netlist (ori) net_train_ori
+        ln -s ../../../net_encoder/dataset/data_bench/dataset_train_ori.pkl ./net_train_ori.pkl
+    neg: netlist (neg) net_train_neg
+        ln -s ../../../net_encoder/dataset/data_bench/dataset_train_neg1.pkl ./net_train_neg.pkl
+
+4. Netlist-to-RTL CL
+    anchor: netlist (ori) net_train_ori.pkl
+    pos: RTL (ori) rtl_train_ori.pkl
+    neg: RTL (neg) rtl_train_neg.pkl
+        ln -s ../../../rtl_encoder/dataset/data_bench/dataset_train_neg.pkl ./rtl_train_neg.pkl
+
+
+    ### json
+    ln -s ../../../rtl_encoder/dataset/data_bench/data_dict_train_ori.json train_dict.json
+    ln -s ../../../rtl_encoder/dataset/data_bench/data_dict_test_ori.json test_dict.json
+
+    ### train
+    ln -s ../../../rtl_encoder/dataset/data_bench/dataset_train_pos.pkl ./rtl_train_pos.pkl
+    ln -s ../../../rtl_encoder/dataset/data_bench/dataset_train_ori.pkl ./rtl_train_ori.pkl
+    ln -s ../../../rtl_encoder/dataset/data_bench/dataset_train_neg.pkl ./rtl_train_neg.pkl
+
+    ln -s ../../../net_encoder/dataset/data_bench/dataset_train_pos1.pkl ./net_train_pos.pkl
+    ln -s ../../../net_encoder/dataset/data_bench/dataset_train_ori.pkl ./net_train_ori.pkl
+    ln -s ../../../net_encoder/dataset/data_bench/dataset_train_neg1.pkl ./net_train_neg.pkl
+
+    ### test
+    ln -s ../../../rtl_encoder/dataset/data_bench/dataset_test_ori.pkl ./rtl_test_ori.pkl
+    ln -s ../../../rtl_encoder/dataset/data_bench/dataset_test_pos.pkl ./rtl_test_pos.pkl
+    ln -s ../../../rtl_encoder/dataset/data_bench/dataset_test_neg.pkl ./rtl_test_neg.pkl
+
+    ln -s ../../../net_encoder/dataset/data_bench/dataset_test_ori.pkl ./net_test_ori.pkl
+    ln -s ../../../net_encoder/dataset/data_bench/dataset_test_pos1.pkl ./net_test_pos.pkl
+    ln -s ../../../net_encoder/dataset/data_bench/dataset_test_neg1.pkl ./net_test_neg.pkl
+
+    ### valid
+    ln -s ../../../net_encoder/dataset/data_bench/dataset_valid_ori.pkl ./net_valid_ori.pkl
+    ln -s ../../../net_encoder/dataset/data_bench/dataset_valid_pos1.pkl ./net_valid_pos.pkl
+    ln -s ../../../net_encoder/dataset/data_bench/dataset_valid_neg1.pkl ./net_valid_neg.pkl
+
+    ln -s ../../../rtl_encoder/dataset/data_bench/dataset_valid_ori.pkl ./rtl_valid_ori.pkl
+    ln -s ../../../rtl_encoder/dataset/data_bench/dataset_valid_pos.pkl ./rtl_valid_pos.pkl
+    ln -s ../../../rtl_encoder/dataset/data_bench/dataset_valid_neg.pkl ./rtl_valid_neg.pkl
